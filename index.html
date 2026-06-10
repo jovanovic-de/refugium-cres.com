@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Refugium Cres – Eine Insel. Ein Leben lang.</title>
-  <meta name="description" content="Refugium Cres – Persönliche Fotos, Geschichten und Erinnerungen von der kroatischen Insel Cres im Kvarner Golf." />
+  <title>Refugium Cres – An Island. A Lifetime.</title>
+  <meta name="description" content="Refugium Cres – Personal photos, stories and memories from the Croatian island of Cres in the Kvarner Gulf." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Figtree:wght@200;300;400;500&display=swap" rel="stylesheet" />
@@ -60,11 +60,11 @@
     }
 
     .nav-crest {
-      width: 36px;
-      height: 36px;
-      background: var(--navy-mid);
-      border-radius: 50%;
-      border: 1px solid rgba(212,184,122,0.35);
+      width: 42px;
+      height: 48px;
+      background: transparent;
+      border-radius: 0;
+      border: none;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -628,37 +628,56 @@
   <nav class="nav">
     <a href="#" class="nav-brand">
       <div class="nav-crest">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="3" y="1" width="3" height="3" fill="rgba(212,184,122,0.75)" rx="0.4"/>
-          <rect x="8.5" y="1" width="3" height="3" fill="rgba(212,184,122,0.75)" rx="0.4"/>
-          <rect x="14" y="1" width="3" height="3" fill="rgba(212,184,122,0.75)" rx="0.4"/>
-          <rect x="4" y="4" width="12" height="8" fill="rgba(212,184,122,0.75)" rx="1"/>
-          <path d="M2 12 Q10 19.5 18 12" fill="rgba(212,184,122,0.75)"/>
-          <rect x="7.5" y="6" width="5" height="5.5" fill="#12273d" rx="0.5"/>
+        <svg width="36" height="36" viewBox="0 0 100 115" xmlns="http://www.w3.org/2000/svg" aria-label="Refugium Cres crest">
+          <!-- Shield shape -->
+          <path d="M5 5 H95 V70 Q50 115 50 115 Q50 115 5 70 Z" fill="#2a5aa0"/>
+          <!-- Merlons (battlements) -->
+          <rect x="34" y="18" width="7" height="8" fill="white" rx="0.5"/>
+          <rect x="44" y="18" width="7" height="8" fill="white" rx="0.5"/>
+          <rect x="54" y="18" width="7" height="8" fill="white" rx="0.5"/>
+          <!-- Tower body -->
+          <path d="M38 26 L37 52 L63 52 L62 26 Z" fill="white"/>
+          <!-- Tower gate arch -->
+          <path d="M46 52 L46 44 Q50 40 54 44 L54 52 Z" fill="#2a5aa0"/>
+          <!-- Tower window left -->
+          <rect x="39" y="34" width="5" height="5" fill="#2a5aa0" rx="0.5"/>
+          <!-- Tower window right -->
+          <rect x="56" y="34" width="5" height="5" fill="#2a5aa0" rx="0.5"/>
+          <!-- Tower base taper -->
+          <path d="M37 52 L33 58 L67 58 L63 52 Z" fill="white"/>
+          <!-- Wave 1 -->
+          <path d="M15 63 Q25 58 35 63 Q45 68 55 63 Q65 58 85 63" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- Wave 2 -->
+          <path d="M10 71 Q22 66 34 71 Q46 76 58 71 Q70 66 90 71" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- Curved text "REFUGIUM CRES" -->
+          <path id="curve" d="M18 90 Q50 112 82 90" fill="none"/>
+          <text font-family="Georgia, serif" font-size="9" font-weight="bold" fill="white" letter-spacing="1.5">
+            <textPath href="#curve" startOffset="50%" text-anchor="middle">REFUGIUM CRES</textPath>
+          </text>
         </svg>
       </div>
       <span class="nav-title">Refugium Cres</span>
     </a>
     <ul class="nav-links" id="nav-links">
       <li><a href="#blog">Blog</a></li>
-      <li><a href="#galerie">Galerie</a></li>
-      <li><a href="#insel">Die Insel</a></li>
-      <li><a href="#ueber">Über</a></li>
+      <li><a href="#galerie">Gallery</a></li>
+      <li><a href="#insel">The Island</a></li>
+      <li><a href="#ueber">About</a></li>
     </ul>
-    <button class="nav-hamburger" aria-label="Menü öffnen" onclick="document.getElementById('nav-links').classList.toggle('open')">
+    <button class="nav-hamburger" aria-label="Open menu" onclick="document.getElementById('nav-links').classList.toggle('open')">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
   <!-- HERO -->
-  <section class="hero" aria-label="Titelbild">
-    <!-- Ersetze das div unten mit: <img src="dein-foto.jpg" alt="Cres von oben" class="hero-img"> -->
+  <section class="hero" aria-label="Hero image">
+    <!-- Replace the div below with: <img src="your-photo.jpg" alt="Cres from above" class="hero-img"> -->
     <div class="hero-placeholder"></div>
     <div class="hero-overlay">
-      <p class="hero-eyebrow">Kvarner &middot; Kroatien &middot; Adria</p>
+      <p class="hero-eyebrow">Kvarner &middot; Croatia &middot; Adriatic</p>
       <h1 class="hero-title">Refugium<br>Cres</h1>
       <div class="hero-rule"></div>
-      <p class="hero-sub">Eine Insel. Ein Leben lang.</p>
+      <p class="hero-sub">An Island. A Lifetime.</p>
     </div>
     <div class="hero-scroll" aria-hidden="true">
       <div class="hero-scroll-line"></div>
@@ -667,32 +686,32 @@
 
   <!-- INTRO -->
   <section class="intro" id="insel">
-    <!-- Ersetze das div unten mit: <img src="dein-foto.jpg" alt="Cres Altstadt" class="intro-img"> -->
+    <!-- Replace the div below with: <img src="your-photo.jpg" alt="Cres old town" class="intro-img"> -->
     <div class="intro-img"></div>
     <div class="intro-text">
       <div class="intro-rule"></div>
-      <h2>Seit meiner Kindheit kehre ich zurück – jeden Sommer, ohne Ausnahme.</h2>
-      <p>Cres ist nicht einfach eine Urlaubsinsel. Sie ist ein Gefühl. Enge Gassen aus Kalkstein, der Geruch von Salzluft und Lavendel, der Hafen im Abendlicht. Diese Seite ist mein persönliches Archiv – Fotos, Geschichten und Momente von meiner Insel.</p>
+      <h2>Since childhood I keep coming back – every summer, without exception.</h2>
+      <p>Cres is not simply a holiday island. It is a feeling. Narrow lanes of limestone, the scent of sea air and lavender, the harbour at dusk. This site is my personal archive – photos, stories and moments from my island.</p>
     </div>
   </section>
 
   <!-- BLOG -->
   <section id="blog">
     <div class="section-header">
-      <p class="section-label">Neueste Beiträge</p>
+      <p class="section-label">Latest Posts</p>
     </div>
     <div class="posts">
 
       <article class="post">
         <div class="post-img">
-          <!-- Ersetze mit: <img src="foto-gasse.jpg" alt="Gasse in Cres"> -->
+          <!-- Replace with: <img src="photo-alley.jpg" alt="Alley in Cres"> -->
           <div class="post-img-placeholder p1"></div>
         </div>
         <div class="post-body">
-          <p class="post-tag">Altstadt</p>
-          <h2 class="post-title">Die Gassen von Cres – ein Labyrinth aus Stein und Zeit</h2>
-          <p class="post-text">Zwischen Bögen und verwitterten Fassaden öffnet sich die ganze Geschichte der Insel…</p>
-          <a href="#" class="post-more">Weiterlesen <span class="post-more-arrow">→</span></a>
+          <p class="post-tag">Old Town</p>
+          <h2 class="post-title">The lanes of Cres – a labyrinth of stone and time</h2>
+          <p class="post-text">Between arches and weathered façades, the whole history of the island unfolds…</p>
+          <a href="#" class="post-more">Read more <span class="post-more-arrow">→</span></a>
         </div>
       </article>
 
@@ -701,10 +720,10 @@
           <div class="post-img-placeholder p2"></div>
         </div>
         <div class="post-body">
-          <p class="post-tag">Hafen</p>
-          <h2 class="post-title">Abendstimmung am Hafen – wenn die Stadt golden wird</h2>
-          <p class="post-text">Die Boote liegen ruhig, das Wasser spiegelt die alten Fassaden, die Zeit steht still…</p>
-          <a href="#" class="post-more">Weiterlesen <span class="post-more-arrow">→</span></a>
+          <p class="post-tag">Harbour</p>
+          <h2 class="post-title">Evening at the harbour – when the town turns golden</h2>
+          <p class="post-text">The boats lie still, the water mirrors the old façades, time stands still…</p>
+          <a href="#" class="post-more">Read more <span class="post-more-arrow">→</span></a>
         </div>
       </article>
 
@@ -713,10 +732,10 @@
           <div class="post-img-placeholder p3"></div>
         </div>
         <div class="post-body">
-          <p class="post-tag">Festung</p>
-          <h2 class="post-title">Der Wehrturm – stumme Wache über der Altstadt seit Jahrhunderten</h2>
-          <p class="post-text">Er hat Venezianer und Piraten gesehen. Heute blickt er auf Touristen und Möwen…</p>
-          <a href="#" class="post-more">Weiterlesen <span class="post-more-arrow">→</span></a>
+          <p class="post-tag">Fortress</p>
+          <h2 class="post-title">The watchtower – silent guardian over the old town for centuries</h2>
+          <p class="post-text">It has seen Venetians and pirates. Today it watches over tourists and seagulls…</p>
+          <a href="#" class="post-more">Read more <span class="post-more-arrow">→</span></a>
         </div>
       </article>
 
@@ -726,18 +745,18 @@
   <!-- FEATURED -->
   <section>
     <div class="section-header" style="margin-top: 2.5rem;">
-      <p class="section-label">Empfohlener Beitrag</p>
+      <p class="section-label">Featured Post</p>
     </div>
     <div class="featured">
       <div class="featured-img">
-        <!-- Ersetze mit: <img src="foto-drohne.jpg" alt="Cres von oben"> -->
+        <!-- Replace with: <img src="photo-drone.jpg" alt="Cres from above"> -->
       </div>
       <div class="featured-body">
-        <p class="featured-eyebrow">Vogelperspektive</p>
-        <h2 class="featured-title">Cres von oben – die Insel in ihrer ganzen Schönheit</h2>
+        <p class="featured-eyebrow">Bird's Eye View</p>
+        <h2 class="featured-title">Cres from above – the island in all its beauty</h2>
         <div class="featured-rule"></div>
-        <p class="featured-text">Rote Dächer, türkisblaues Wasser, der Hafen wie ein Halbmond – von oben offenbart Cres eine Geometrie, die man zu Fuß nie sieht. Ein Blick, der süchtig macht.</p>
-        <a href="#" class="post-more" style="margin-top: 1.5rem;">Zum Beitrag <span class="post-more-arrow">→</span></a>
+        <p class="featured-text">Red rooftops, turquoise water, the harbour shaped like a crescent – from above, Cres reveals a geometry you never see on foot. A view that stays with you.</p>
+        <a href="#" class="post-more" style="margin-top: 1.5rem;">Read post <span class="post-more-arrow">→</span></a>
       </div>
     </div>
   </section>
@@ -745,10 +764,10 @@
   <!-- GALLERY -->
   <section id="galerie">
     <div class="section-header" style="margin-top: 2.5rem;">
-      <p class="section-label">Galerie</p>
+      <p class="section-label">Gallery</p>
     </div>
     <div class="gallery">
-      <!-- Ersetze die Platzhalter-divs mit echten Fotos: <img src="..." alt="..."> -->
+      <!-- Replace placeholder divs with real photos: <img src="..." alt="..."> -->
       <div class="g-tile span2"><div class="g-ph g1"></div></div>
       <div class="g-tile"><div class="g-ph g2"></div></div>
       <div class="g-tile"><div class="g-ph g3"></div></div>
@@ -760,7 +779,7 @@
 
   <!-- QUOTE -->
   <blockquote class="quote-band">
-    <blockquote>„Cres ist kein Ort, den man besucht.<br>Es ist ein Ort, zu dem man gehört."</blockquote>
+    <blockquote>"Cres is not a place you visit.<br>It is a place you belong to."</blockquote>
     <cite>refugium-cres.com</cite>
   </blockquote>
 
@@ -771,11 +790,11 @@
     </div>
     <div class="about">
       <div class="about-img">
-        <!-- Ersetze mit: <img src="foto-portrait.jpg" alt="Autor"> -->
+        <!-- Replace with: <img src="photo-portrait.jpg" alt="Author"> -->
       </div>
       <div class="about-body">
-        <h3>Eine persönliche Seite über eine Insel, die mich seit Kindheitstagen nicht loslässt.</h3>
-        <p>Refugium Cres ist kein Reiseführer und keine Tourismusseite. Es ist ein persönliches Archiv – Fotos, Erinnerungen und Geschichten von Sommern, die sich über Jahrzehnte erstrecken. Wer Cres kennt, wird vieles wiedererkennen. Wer die Insel noch nicht kennt, bekommt vielleicht Lust, hinzufahren.</p>
+        <h3>A personal site about an island that has held me since childhood.</h3>
+        <p>Refugium Cres is not a travel guide or a tourism site. It is a personal archive – photos, memories and stories from summers that stretch across decades. Those who know Cres will recognise much of it. Those who don't may find themselves wanting to go.</p>
       </div>
     </div>
   </section>
