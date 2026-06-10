@@ -22,10 +22,8 @@
       --terracotta: #c47a3a;
       --stone:      #8a6a3a;
       --ink:        #1a1008;
-      --ink-soft:   #4a3a2a;
       --ink-muted:  #6a5a4a;
       --rule:       #d4c4a0;
-      --rule-light: rgba(212,196,160,0.4);
     }
 
     html { scroll-behavior: smooth; }
@@ -63,7 +61,6 @@
       width: 42px;
       height: 48px;
       background: transparent;
-      border-radius: 0;
       border: none;
       display: flex;
       align-items: center;
@@ -76,6 +73,12 @@
       font-size: 16px;
       color: var(--sand-dark);
       letter-spacing: 0.08em;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
     }
 
     .nav-links {
@@ -95,6 +98,42 @@
     }
 
     .nav-links a:hover { color: var(--gold); }
+
+    /* ── LANGUAGE SWITCHER ── */
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      border: 1px solid rgba(212,184,122,0.3);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: rgba(232,220,200,0.45);
+      font-family: 'Figtree', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      padding: 4px 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .lang-btn.active {
+      background: rgba(212,184,122,0.2);
+      color: var(--gold);
+    }
+
+    .lang-btn:hover:not(.active) { color: rgba(232,220,200,0.75); }
+
+    .lang-divider {
+      width: 1px;
+      height: 16px;
+      background: rgba(212,184,122,0.25);
+    }
 
     .nav-hamburger {
       display: none;
@@ -131,7 +170,6 @@
       display: block;
     }
 
-    /* Placeholder shown when no image is present */
     .hero-placeholder {
       position: absolute;
       inset: 0;
@@ -208,11 +246,8 @@
       50% { opacity: 1; transform: scaleY(1.2); }
     }
 
-    /* ── INTRO SPLIT ── */
-    .intro {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
+    /* ── INTRO ── */
+    .intro { display: grid; grid-template-columns: 1fr 1fr; }
 
     .intro-img {
       min-height: 320px;
@@ -220,12 +255,7 @@
       overflow: hidden;
     }
 
-    .intro-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+    .intro-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     .intro-text {
       background: var(--navy);
@@ -235,12 +265,7 @@
       justify-content: center;
     }
 
-    .intro-rule {
-      width: 28px;
-      height: 1px;
-      background: var(--gold);
-      margin-bottom: 1.5rem;
-    }
+    .intro-rule { width: 28px; height: 1px; background: var(--gold); margin-bottom: 1.5rem; }
 
     .intro-text h2 {
       font-family: 'Gilda Display', serif;
@@ -259,9 +284,7 @@
     }
 
     /* ── SECTION HEADERS ── */
-    .section-header {
-      padding: 3rem 2.5rem 0;
-    }
+    .section-header { padding: 3rem 2.5rem 0; }
 
     .section-label {
       font-size: 10px;
@@ -274,14 +297,9 @@
       gap: 14px;
     }
 
-    .section-label::after {
-      content: '';
-      flex: 1;
-      height: 0.5px;
-      background: var(--rule);
-    }
+    .section-label::after { content: ''; flex: 1; height: 0.5px; background: var(--rule); }
 
-    /* ── BLOG POSTS GRID ── */
+    /* ── POSTS ── */
     .posts {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -289,32 +307,14 @@
       margin-top: 1.5rem;
     }
 
-    .post {
-      border-right: 0.5px solid var(--rule);
-    }
-
+    .post { border-right: 0.5px solid var(--rule); }
     .post:last-child { border-right: none; }
 
-    .post-img {
-      height: 220px;
-      overflow: hidden;
-    }
-
-    .post-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.5s ease;
-    }
-
+    .post-img { height: 220px; overflow: hidden; }
+    .post-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
     .post:hover .post-img img { transform: scale(1.04); }
 
-    .post-img-placeholder {
-      width: 100%;
-      height: 100%;
-    }
-
+    .post-img-placeholder { width: 100%; height: 100%; }
     .post-img-placeholder.p1 { background: linear-gradient(155deg, #c4823a, #7a4820); }
     .post-img-placeholder.p2 { background: linear-gradient(155deg, #1a4a6e, #0e2a40); }
     .post-img-placeholder.p3 { background: linear-gradient(155deg, #6a8a4a, #3a5520); }
@@ -361,15 +361,10 @@
     }
 
     .post-more:hover { color: var(--terracotta); }
-
-    .post-more-arrow {
-      font-size: 13px;
-      transition: transform 0.2s;
-    }
-
+    .post-more-arrow { font-size: 13px; transition: transform 0.2s; }
     .post-more:hover .post-more-arrow { transform: translateX(3px); }
 
-    /* ── FEATURED POST ── */
+    /* ── FEATURED ── */
     .featured {
       display: grid;
       grid-template-columns: 1.65fr 1fr;
@@ -383,12 +378,7 @@
       background: linear-gradient(160deg, #1a3a5c, #0a1e30);
     }
 
-    .featured-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+    .featured-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     .featured-body {
       padding: 3rem 2.5rem;
@@ -416,12 +406,7 @@
       font-weight: 400;
     }
 
-    .featured-rule {
-      width: 24px;
-      height: 1px;
-      background: var(--gold);
-      margin-bottom: 1.2rem;
-    }
+    .featured-rule { width: 24px; height: 1px; background: var(--gold); margin-bottom: 1.2rem; }
 
     .featured-text {
       font-size: 14px;
@@ -439,20 +424,9 @@
       margin-top: 1.5rem;
     }
 
-    .g-tile {
-      overflow: hidden;
-    }
-
-    .g-tile img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.5s ease;
-    }
-
+    .g-tile { overflow: hidden; }
+    .g-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
     .g-tile:hover img { transform: scale(1.05); }
-
     .g-tile.span2 { grid-column: span 2; }
 
     .g-ph { width: 100%; height: 100%; }
@@ -463,7 +437,7 @@
     .g-ph.g5 { background: linear-gradient(145deg, #3a6a8c, #1a3a5c); }
     .g-ph.g6 { background: linear-gradient(145deg, #8a4030, #4a2010); }
 
-    /* ── QUOTE BAND ── */
+    /* ── QUOTE ── */
     .quote-band {
       background: var(--navy);
       padding: 4.5rem 2rem;
@@ -502,15 +476,10 @@
       overflow: hidden;
     }
 
-    .about-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+    .about-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     .about-body {
-      padding: 3rem 3rem;
+      padding: 3rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -557,10 +526,7 @@
       letter-spacing: 0.1em;
     }
 
-    .footer-social {
-      display: flex;
-      gap: 1.2rem;
-    }
+    .footer-social { display: flex; gap: 1.2rem; }
 
     .footer-social a {
       color: rgba(232,220,200,0.35);
@@ -581,40 +547,24 @@
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 64px;
-        left: 0;
-        right: 0;
+        top: 64px; left: 0; right: 0;
         background: var(--navy);
         padding: 1.5rem 2.5rem;
         gap: 1.2rem;
         border-bottom: 1px solid rgba(212,184,122,0.12);
       }
-
       .intro { grid-template-columns: 1fr; }
       .intro-img { min-height: 220px; }
-
       .posts { grid-template-columns: 1fr; }
       .post { border-right: none; border-bottom: 0.5px solid var(--rule); }
       .post:last-child { border-bottom: none; }
-
       .featured { grid-template-columns: 1fr; }
       .featured-body { border-left: none; border-top: 0.5px solid var(--rule); }
-
-      .gallery {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(4, 160px);
-      }
+      .gallery { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(4, 160px); }
       .g-tile.span2 { grid-column: span 1; }
-
       .about { grid-template-columns: 1fr; }
       .about-body { border-left: none; border-top: 0.5px solid var(--rule); }
-
-      .footer {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-      }
-
+      .footer { flex-direction: column; gap: 1rem; text-align: center; }
       .section-header { padding: 2.5rem 1.5rem 0; }
       .intro-text { padding: 2.5rem 1.5rem; }
       .featured-body { padding: 2rem 1.5rem; }
@@ -628,28 +578,18 @@
   <nav class="nav">
     <a href="#" class="nav-brand">
       <div class="nav-crest">
-        <svg width="36" height="36" viewBox="0 0 100 115" xmlns="http://www.w3.org/2000/svg" aria-label="Refugium Cres crest">
-          <!-- Shield shape -->
+        <svg width="42" height="48" viewBox="0 0 100 115" xmlns="http://www.w3.org/2000/svg" aria-label="Refugium Cres crest">
           <path d="M5 5 H95 V70 Q50 115 50 115 Q50 115 5 70 Z" fill="#2a5aa0"/>
-          <!-- Merlons (battlements) -->
           <rect x="34" y="18" width="7" height="8" fill="white" rx="0.5"/>
           <rect x="44" y="18" width="7" height="8" fill="white" rx="0.5"/>
           <rect x="54" y="18" width="7" height="8" fill="white" rx="0.5"/>
-          <!-- Tower body -->
           <path d="M38 26 L37 52 L63 52 L62 26 Z" fill="white"/>
-          <!-- Tower gate arch -->
           <path d="M46 52 L46 44 Q50 40 54 44 L54 52 Z" fill="#2a5aa0"/>
-          <!-- Tower window left -->
           <rect x="39" y="34" width="5" height="5" fill="#2a5aa0" rx="0.5"/>
-          <!-- Tower window right -->
           <rect x="56" y="34" width="5" height="5" fill="#2a5aa0" rx="0.5"/>
-          <!-- Tower base taper -->
           <path d="M37 52 L33 58 L67 58 L63 52 Z" fill="white"/>
-          <!-- Wave 1 -->
           <path d="M15 63 Q25 58 35 63 Q45 68 55 63 Q65 58 85 63" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
-          <!-- Wave 2 -->
           <path d="M10 71 Q22 66 34 71 Q46 76 58 71 Q70 66 90 71" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
-          <!-- Curved text "REFUGIUM CRES" -->
           <path id="curve" d="M18 90 Q50 112 82 90" fill="none"/>
           <text font-family="Georgia, serif" font-size="9" font-weight="bold" fill="white" letter-spacing="1.5">
             <textPath href="#curve" startOffset="50%" text-anchor="middle">REFUGIUM CRES</textPath>
@@ -658,26 +598,37 @@
       </div>
       <span class="nav-title">Refugium Cres</span>
     </a>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#blog">Blog</a></li>
-      <li><a href="#galerie">Gallery</a></li>
-      <li><a href="#insel">The Island</a></li>
-      <li><a href="#ueber">About</a></li>
-    </ul>
-    <button class="nav-hamburger" aria-label="Open menu" onclick="document.getElementById('nav-links').classList.toggle('open')">
-      <span></span><span></span><span></span>
-    </button>
+
+    <div class="nav-right">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#blog" data-i18n="nav_blog">Blog</a></li>
+        <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
+        <li><a href="#island" data-i18n="nav_island">The Island</a></li>
+        <li><a href="#about" data-i18n="nav_about">About</a></li>
+      </ul>
+
+      <!-- Language Switcher -->
+      <div class="lang-switcher">
+        <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+        <div class="lang-divider"></div>
+        <button class="lang-btn" id="btn-de" onclick="setLang('de')">DE</button>
+      </div>
+
+      <button class="nav-hamburger" aria-label="Open menu" onclick="document.getElementById('nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
   <!-- HERO -->
-  <section class="hero" aria-label="Hero image">
-    <!-- Replace the div below with: <img src="your-photo.jpg" alt="Cres from above" class="hero-img"> -->
+  <section class="hero" aria-label="Hero">
     <div class="hero-placeholder"></div>
+    <!-- Replace with: <img src="your-photo.jpg" alt="Cres from above" class="hero-img"> -->
     <div class="hero-overlay">
-      <p class="hero-eyebrow">Kvarner &middot; Croatia &middot; Adriatic</p>
+      <p class="hero-eyebrow" data-i18n="hero_eyebrow">Kvarner · Croatia · Adriatic</p>
       <h1 class="hero-title">Refugium<br>Cres</h1>
       <div class="hero-rule"></div>
-      <p class="hero-sub">An Island. A Lifetime.</p>
+      <p class="hero-sub" data-i18n="hero_sub">An Island. A Lifetime.</p>
     </div>
     <div class="hero-scroll" aria-hidden="true">
       <div class="hero-scroll-line"></div>
@@ -685,20 +636,21 @@
   </section>
 
   <!-- INTRO -->
-  <section class="intro" id="insel">
-    <!-- Replace the div below with: <img src="your-photo.jpg" alt="Cres old town" class="intro-img"> -->
-    <div class="intro-img"></div>
+  <section class="intro" id="island">
+    <div class="intro-img">
+      <!-- Replace with: <img src="your-photo.jpg" alt="Cres old town"> -->
+    </div>
     <div class="intro-text">
       <div class="intro-rule"></div>
-      <h2>Since childhood I keep coming back – every summer, without exception.</h2>
-      <p>Cres is not simply a holiday island. It is a feeling. Narrow lanes of limestone, the scent of sea air and lavender, the harbour at dusk. This site is my personal archive – photos, stories and moments from my island.</p>
+      <h2 data-i18n="intro_heading">Since childhood I keep coming back – every summer, without exception.</h2>
+      <p data-i18n="intro_text">Cres is not simply a holiday island. It is a feeling. Narrow lanes of limestone, the scent of sea air and lavender, the harbour at dusk. This site is my personal archive – photos, stories and moments from my island.</p>
     </div>
   </section>
 
   <!-- BLOG -->
   <section id="blog">
     <div class="section-header">
-      <p class="section-label">Latest Posts</p>
+      <p class="section-label" data-i18n="section_blog">Latest Posts</p>
     </div>
     <div class="posts">
 
@@ -708,10 +660,10 @@
           <div class="post-img-placeholder p1"></div>
         </div>
         <div class="post-body">
-          <p class="post-tag">Old Town</p>
-          <h2 class="post-title">The lanes of Cres – a labyrinth of stone and time</h2>
-          <p class="post-text">Between arches and weathered façades, the whole history of the island unfolds…</p>
-          <a href="#" class="post-more">Read more <span class="post-more-arrow">→</span></a>
+          <p class="post-tag" data-i18n="tag1">Old Town</p>
+          <h2 class="post-title" data-i18n="post1_title">The lanes of Cres – a labyrinth of stone and time</h2>
+          <p class="post-text" data-i18n="post1_text">Between arches and weathered façades, the whole history of the island unfolds…</p>
+          <a href="#" class="post-more"><span data-i18n="read_more">Read more</span> <span class="post-more-arrow">→</span></a>
         </div>
       </article>
 
@@ -720,10 +672,10 @@
           <div class="post-img-placeholder p2"></div>
         </div>
         <div class="post-body">
-          <p class="post-tag">Harbour</p>
-          <h2 class="post-title">Evening at the harbour – when the town turns golden</h2>
-          <p class="post-text">The boats lie still, the water mirrors the old façades, time stands still…</p>
-          <a href="#" class="post-more">Read more <span class="post-more-arrow">→</span></a>
+          <p class="post-tag" data-i18n="tag2">Harbour</p>
+          <h2 class="post-title" data-i18n="post2_title">Evening at the harbour – when the town turns golden</h2>
+          <p class="post-text" data-i18n="post2_text">The boats lie still, the water mirrors the old façades, time stands still…</p>
+          <a href="#" class="post-more"><span data-i18n="read_more">Read more</span> <span class="post-more-arrow">→</span></a>
         </div>
       </article>
 
@@ -732,10 +684,10 @@
           <div class="post-img-placeholder p3"></div>
         </div>
         <div class="post-body">
-          <p class="post-tag">Fortress</p>
-          <h2 class="post-title">The watchtower – silent guardian over the old town for centuries</h2>
-          <p class="post-text">It has seen Venetians and pirates. Today it watches over tourists and seagulls…</p>
-          <a href="#" class="post-more">Read more <span class="post-more-arrow">→</span></a>
+          <p class="post-tag" data-i18n="tag3">Fortress</p>
+          <h2 class="post-title" data-i18n="post3_title">The watchtower – silent guardian over the old town for centuries</h2>
+          <p class="post-text" data-i18n="post3_text">It has seen Venetians and pirates. Today it watches over tourists and seagulls…</p>
+          <a href="#" class="post-more"><span data-i18n="read_more">Read more</span> <span class="post-more-arrow">→</span></a>
         </div>
       </article>
 
@@ -744,30 +696,30 @@
 
   <!-- FEATURED -->
   <section>
-    <div class="section-header" style="margin-top: 2.5rem;">
-      <p class="section-label">Featured Post</p>
+    <div class="section-header" style="margin-top:2.5rem;">
+      <p class="section-label" data-i18n="section_featured">Featured Post</p>
     </div>
     <div class="featured">
       <div class="featured-img">
         <!-- Replace with: <img src="photo-drone.jpg" alt="Cres from above"> -->
       </div>
       <div class="featured-body">
-        <p class="featured-eyebrow">Bird's Eye View</p>
-        <h2 class="featured-title">Cres from above – the island in all its beauty</h2>
+        <p class="featured-eyebrow" data-i18n="featured_eyebrow">Bird's Eye View</p>
+        <h2 class="featured-title" data-i18n="featured_title">Cres from above – the island in all its beauty</h2>
         <div class="featured-rule"></div>
-        <p class="featured-text">Red rooftops, turquoise water, the harbour shaped like a crescent – from above, Cres reveals a geometry you never see on foot. A view that stays with you.</p>
-        <a href="#" class="post-more" style="margin-top: 1.5rem;">Read post <span class="post-more-arrow">→</span></a>
+        <p class="featured-text" data-i18n="featured_text">Red rooftops, turquoise water, the harbour shaped like a crescent – from above, Cres reveals a geometry you never see on foot. A view that stays with you.</p>
+        <a href="#" class="post-more" style="margin-top:1.5rem;"><span data-i18n="read_post">Read post</span> <span class="post-more-arrow">→</span></a>
       </div>
     </div>
   </section>
 
   <!-- GALLERY -->
-  <section id="galerie">
-    <div class="section-header" style="margin-top: 2.5rem;">
-      <p class="section-label">Gallery</p>
+  <section id="gallery">
+    <div class="section-header" style="margin-top:2.5rem;">
+      <p class="section-label" data-i18n="section_gallery">Gallery</p>
     </div>
     <div class="gallery">
-      <!-- Replace placeholder divs with real photos: <img src="..." alt="..."> -->
+      <!-- Replace placeholders with: <img src="..." alt="..."> -->
       <div class="g-tile span2"><div class="g-ph g1"></div></div>
       <div class="g-tile"><div class="g-ph g2"></div></div>
       <div class="g-tile"><div class="g-ph g3"></div></div>
@@ -778,23 +730,23 @@
   </section>
 
   <!-- QUOTE -->
-  <blockquote class="quote-band">
-    <blockquote>"Cres is not a place you visit.<br>It is a place you belong to."</blockquote>
+  <div class="quote-band">
+    <blockquote data-i18n="quote">"Cres is not a place you visit.<br>It is a place you belong to."</blockquote>
     <cite>refugium-cres.com</cite>
-  </blockquote>
+  </div>
 
   <!-- ABOUT -->
-  <section id="ueber">
-    <div class="section-header" style="padding-top: 0;">
-      <p class="section-label" style="padding-top: 2.5rem; border-top: 0.5px solid var(--rule);"></p>
+  <section id="about">
+    <div class="section-header" style="padding-top:0;">
+      <p class="section-label" style="padding-top:2.5rem; border-top:0.5px solid var(--rule);" data-i18n="section_about">About</p>
     </div>
     <div class="about">
       <div class="about-img">
         <!-- Replace with: <img src="photo-portrait.jpg" alt="Author"> -->
       </div>
       <div class="about-body">
-        <h3>A personal site about an island that has held me since childhood.</h3>
-        <p>Refugium Cres is not a travel guide or a tourism site. It is a personal archive – photos, memories and stories from summers that stretch across decades. Those who know Cres will recognise much of it. Those who don't may find themselves wanting to go.</p>
+        <h3 data-i18n="about_heading">A personal site about an island that has held me since childhood.</h3>
+        <p data-i18n="about_text">Refugium Cres is not a travel guide or a tourism site. It is a personal archive – photos, memories and stories from summers that stretch across decades. Those who know Cres will recognise much of it. Those who don't may find themselves wanting to go.</p>
       </div>
     </div>
   </section>
@@ -808,6 +760,106 @@
       <a href="https://www.facebook.com/refugiumcres/" target="_blank" rel="noopener">Facebook</a>
     </div>
   </footer>
+
+  <script>
+    // ── TRANSLATIONS ──────────────────────────────────────────────
+    const translations = {
+      en: {
+        nav_blog:         "Blog",
+        nav_gallery:      "Gallery",
+        nav_island:       "The Island",
+        nav_about:        "About",
+        hero_eyebrow:     "Kvarner · Croatia · Adriatic",
+        hero_sub:         "An Island. A Lifetime.",
+        intro_heading:    "Since childhood I keep coming back – every summer, without exception.",
+        intro_text:       "Cres is not simply a holiday island. It is a feeling. Narrow lanes of limestone, the scent of sea air and lavender, the harbour at dusk. This site is my personal archive – photos, stories and moments from my island.",
+        section_blog:     "Latest Posts",
+        tag1:             "Old Town",
+        post1_title:      "The lanes of Cres – a labyrinth of stone and time",
+        post1_text:       "Between arches and weathered façades, the whole history of the island unfolds…",
+        tag2:             "Harbour",
+        post2_title:      "Evening at the harbour – when the town turns golden",
+        post2_text:       "The boats lie still, the water mirrors the old façades, time stands still…",
+        tag3:             "Fortress",
+        post3_title:      "The watchtower – silent guardian over the old town for centuries",
+        post3_text:       "It has seen Venetians and pirates. Today it watches over tourists and seagulls…",
+        read_more:        "Read more",
+        section_featured: "Featured Post",
+        featured_eyebrow: "Bird's Eye View",
+        featured_title:   "Cres from above – the island in all its beauty",
+        featured_text:    "Red rooftops, turquoise water, the harbour shaped like a crescent – from above, Cres reveals a geometry you never see on foot. A view that stays with you.",
+        read_post:        "Read post",
+        section_gallery:  "Gallery",
+        quote:            '"Cres is not a place you visit.<br>It is a place you belong to."',
+        section_about:    "About",
+        about_heading:    "A personal site about an island that has held me since childhood.",
+        about_text:       "Refugium Cres is not a travel guide or a tourism site. It is a personal archive – photos, memories and stories from summers that stretch across decades. Those who know Cres will recognise much of it. Those who don't may find themselves wanting to go.",
+      },
+      de: {
+        nav_blog:         "Blog",
+        nav_gallery:      "Galerie",
+        nav_island:       "Die Insel",
+        nav_about:        "Über",
+        hero_eyebrow:     "Kvarner · Kroatien · Adria",
+        hero_sub:         "Eine Insel. Ein Leben lang.",
+        intro_heading:    "Seit meiner Kindheit kehre ich zurück – jeden Sommer, ohne Ausnahme.",
+        intro_text:       "Cres ist nicht einfach eine Urlaubsinsel. Sie ist ein Gefühl. Enge Gassen aus Kalkstein, der Geruch von Salzluft und Lavendel, der Hafen im Abendlicht. Diese Seite ist mein persönliches Archiv – Fotos, Geschichten und Momente von meiner Insel.",
+        section_blog:     "Neueste Beiträge",
+        tag1:             "Altstadt",
+        post1_title:      "Die Gassen von Cres – ein Labyrinth aus Stein und Zeit",
+        post1_text:       "Zwischen Bögen und verwitterten Fassaden öffnet sich die ganze Geschichte der Insel…",
+        tag2:             "Hafen",
+        post2_title:      "Abendstimmung am Hafen – wenn die Stadt golden wird",
+        post2_text:       "Die Boote liegen ruhig, das Wasser spiegelt die alten Fassaden, die Zeit steht still…",
+        tag3:             "Festung",
+        post3_title:      "Der Wehrturm – stumme Wache über der Altstadt seit Jahrhunderten",
+        post3_text:       "Er hat Venezianer und Piraten gesehen. Heute blickt er auf Touristen und Möwen…",
+        read_more:        "Weiterlesen",
+        section_featured: "Empfohlener Beitrag",
+        featured_eyebrow: "Vogelperspektive",
+        featured_title:   "Cres von oben – die Insel in ihrer ganzen Schönheit",
+        featured_text:    "Rote Dächer, türkisblaues Wasser, der Hafen wie ein Halbmond – von oben offenbart Cres eine Geometrie, die man zu Fuß nie sieht. Ein Blick, der süchtig macht.",
+        read_post:        "Zum Beitrag",
+        section_gallery:  "Galerie",
+        quote:            '„Cres ist kein Ort, den man besucht.<br>Es ist ein Ort, zu dem man gehört."',
+        section_about:    "Über diese Seite",
+        about_heading:    "Eine persönliche Seite über eine Insel, die mich seit Kindheitstagen nicht loslässt.",
+        about_text:       "Refugium Cres ist kein Reiseführer und keine Tourismusseite. Es ist ein persönliches Archiv – Fotos, Erinnerungen und Geschichten von Sommern, die sich über Jahrzehnte erstrecken. Wer Cres kennt, wird vieles wiedererkennen. Wer die Insel noch nicht kennt, bekommt vielleicht Lust, hinzufahren.",
+      }
+    };
+
+    // ── APPLY LANGUAGE ────────────────────────────────────────────
+    function setLang(lang) {
+      const t = translations[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+      document.documentElement.lang = lang;
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+      localStorage.setItem('rc_lang', lang);
+
+      // Update page title
+      document.title = lang === 'de'
+        ? 'Refugium Cres – Eine Insel. Ein Leben lang.'
+        : 'Refugium Cres – An Island. A Lifetime.';
+    }
+
+    // ── AUTO-DETECT ON LOAD ───────────────────────────────────────
+    (function() {
+      // 1. Check if user manually chose a language before
+      const saved = localStorage.getItem('rc_lang');
+      if (saved) { setLang(saved); return; }
+
+      // 2. Auto-detect by domain
+      const host = window.location.hostname;
+      if (host.endsWith('.de')) { setLang('de'); return; }
+
+      // 3. Default to English
+      setLang('en');
+    })();
+  </script>
 
 </body>
 </html>
